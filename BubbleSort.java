@@ -13,12 +13,17 @@ public class BubbleSort {
         int lengthOfArray = numbers.length;
 
         while (lengthOfArray != -1) {
+            boolean checkNotChange = true;
             for (int i = 1; i < lengthOfArray; i++) {
                 int current = numbers[i];
                 if (current < numbers[i-1]) {
                     numbers[i] = numbers[i-1];
                     numbers[i-1] = current;
+                    checkNotChange = false;
                 }
+            }
+            if (checkNotChange){
+                break;
             }
             lengthOfArray-- ;
         }
