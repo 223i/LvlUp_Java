@@ -111,7 +111,7 @@ class Passenger{
     private String citizenship;
     ArrayList<Booking> createdBooking = new ArrayList<>();
 
-    Passenger(String firstName, String secondName, String gender, int age, String citizenship){
+    public Passenger(String firstName, String secondName, String gender, int age, String citizenship){
         if (firstName== null || secondName == null || gender == null || age <= 0 || citizenship == null ){
             throw new IllegalArgumentException("Name schould be specified and age must be > 0");
         }
@@ -193,7 +193,7 @@ class AirCompany {
     private String nameOfAirCompany;
     private ArrayList<Flight> allFlights = new ArrayList<>();
 
-    AirCompany(String nameOfCompany) {
+    public AirCompany(String nameOfCompany) {
         nameOfAirCompany = nameOfCompany;
     }
 
@@ -223,4 +223,15 @@ class Booking{
         this.company = company;
     }
 
+    public Passenger getPassenger() {
+        return passenger;
+    }
+
+    public Flight getFlight() {
+        return flight;
+    }
+
+    public AirCompany getCompany() {
+        return company;
+    }
 }
